@@ -1,0 +1,20 @@
+Page	登录页面
+	用户名称输入框	//input[@placeholder="请输入账号"]
+	密码输入框	//input[@placeholder="请输入密码"]
+	登录按钮	//a[text()="登录"]
+Page	主页面
+	事件注册菜单	//div/span[text()="事件注册"]
+	事件目录管理菜单	//a[text()="事件目录管理"]
+
+Page	事件管理页面
+	新增按钮	//a/span[text()="新增"]
+	IFrame	新增弹出窗口	//iframe[@name="Openpage/catalogAddNew"]
+		目录新增弹出窗口	//div[text()="目录新增"]
+		目录新增_目录名称	//input[@name="catalogName"]
+		目录新增_目录编号	//input[@name="catalogCode"]
+		目录新增_目录类别选择	//input[@id="catalogType"]/parent::*/span//a
+		目录新增_父目录	//input[@id="parentCatalogName"]/parent::*//a
+		目录新增_提交	//a/span[text()="提 交"]
+	iframe	父目录选择窗口	//iframe[contains(@src, "parentCatalogChoose")]
+		日志选项	//span[text()="日志"]
+		确认按钮	//a/span[text()="确认"]
