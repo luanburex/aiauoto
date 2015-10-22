@@ -22,13 +22,10 @@ module AIAuto
 
 		class <<self
 
-			def read_gui_file filename
-
-			    @guis ||= {}
-				@guis.clear
+			def read_gui_string str, replace=true
+				@guis ||= {}
 				path = []
-				file=File.open(filename,"r:utf-8")
-				file.each  do |line|
+				str.each_line do |line|
 					next if line.strip.size <= 0
 					tab_num = get_gui_line_tab(line)
 					element_arr = line.strip.split("\t")
@@ -81,13 +78,23 @@ module AIAuto
 					end
 					element = GElement.new name, xpath, type, parent
 					path[get_gui_line_tab(line)] = element
-					if @guis.key? name
-						raise "gui has the same name element."
+					if @guis.key? name and !replace
+						raise "gui has the same name element. Name: #{name}"
 					end
 					@guis[element.name] = element
 				end
+				@guis
+			end
+
+			def read_gui_file filename, replace=true
+				str = ""
+				file=File.open(filename,"r:utf-8")
+				file.each  do |line|
+					str += line + "\n"
+				end
 			    file.close
-			    @guis
+			    
+			    read_gui_string str, replace
 			end
 
 

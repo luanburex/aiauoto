@@ -31,6 +31,10 @@ module AIAuto
 			@guis = AIAuto::GUI.read_gui_file(filename)
 		end
 
+		def read_gui_string str
+			@guis = AIAuto::GUI.read_gui_string(str)
+		end
+
 
 		def element(*args)
 			if(args.size == 1)
