@@ -1,0 +1,712 @@
+# Logfile created on 2015-10-26 16:15:52 +0800 by logger.rb/31641
+I, [2015-10-26 16:15:52#10052]  INFO -- : [Recover]Start
+I, [2015-10-26 16:15:54#10052]  INFO -- : [Recover]End
+I, [2015-10-26 16:15:54#10052]  INFO -- : Run: test_new_dir
+I, [2015-10-26 16:15:54#10052]  INFO -- : [Case]Start: ID: 1, name: 新增目录案例
+E, [2015-10-26 16:16:06#10052] ERROR -- : message: null
+	error: Error Alert in window. information:新增数据失败!配置异常-事件模板配置类异常-模板目录新增，系统下出现重复编码目录
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_345.png
+	backtrace: D:/workspace/ruby/autoaiga/cep/cep.rb:22:in `cep_alert'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:50:in `test_new_dir'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:37:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:33:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:33:in `run_case_test_method'
+D:/workspace/ruby/autoaiga/run.rb:9:in `<main>'
+I, [2015-10-26 16:16:06#10052]  INFO -- : [Case]End: ID: 1, name: 新增目录案例, eclapse: 11.739671, result: 1, message: Error Alert in window. information:新增数据失败!配置异常-事件模板配置类异常-模板目录新增，系统下出现重复编码目录
+I, [2015-10-26 16:19:55#8176]  INFO -- : [Recover]Start
+I, [2015-10-26 16:19:57#8176]  INFO -- : [Recover]End
+I, [2015-10-26 16:19:57#8176]  INFO -- : Run: test_new_dir
+I, [2015-10-26 16:19:57#8176]  INFO -- : [Case]Start: ID: 1, name: 新增目录案例
+E, [2015-10-26 16:20:11#8176] ERROR -- : message: null
+	error: Error Alert in window. information:新增数据失败!配置异常-事件模板配置类异常-模板目录新增，系统下出现重复编码目录
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_154.png
+	backtrace: D:/workspace/ruby/autoaiga/cep/cep.rb:22:in `cep_alert'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:51:in `test_new_dir'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:37:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:33:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:33:in `run_case_test_method'
+D:/workspace/ruby/autoaiga/run.rb:9:in `<main>'
+I, [2015-10-26 16:20:11#8176]  INFO -- : [Case]End: ID: 1, name: 新增目录案例, eclapse: 13.918797, result: 1, message: Error Alert in window. information:新增数据失败!配置异常-事件模板配置类异常-模板目录新增，系统下出现重复编码目录
+I, [2015-10-26 16:20:11#8176]  INFO -- : [Recover]Start
+I, [2015-10-26 16:20:15#8176]  INFO -- : [Recover]End
+I, [2015-10-26 16:20:15#8176]  INFO -- : Run: test_search
+I, [2015-10-26 16:20:15#8176]  INFO -- : [Case]Start: ID: 2, name: 搜索目录
+E, [2015-10-26 16:20:18#8176] ERROR -- : message: null
+	error: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id="catalogCode4Qry"]"}
+  (Session info: chrome=45.0.2454.85)
+  (Driver info: chromedriver=2.18.343845 (73dd713ba7fbfb73cbb514e62641d8c96a94682a),platform=Windows NT 6.1 SP1 x86_64)
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_869.png
+	backtrace: d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/response.rb:71:in `assert_ok'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/response.rb:34:in `initialize'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/common.rb:78:in `new'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/common.rb:78:in `create_response'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/default.rb:90:in `request'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/common.rb:59:in `call'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/bridge.rb:657:in `raw_execute'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/bridge.rb:635:in `execute'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/bridge.rb:603:in `find_element_by'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/common/search_context.rb:61:in `find_element'
+D:/workspace/ruby/autoaiga/lib/aielement_container.rb:29:in `element_no_name'
+D:/workspace/ruby/autoaiga/lib/aielement_container.rb:32:in `element_by_name'
+D:/workspace/ruby/autoaiga/lib/aielement_container.rb:23:in `element'
+D:/workspace/ruby/autoaiga/lib/aielement_container.rb:63:in `fetch_element_from_gui'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:64:in `test_search'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:37:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:33:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:33:in `run_case_test_method'
+D:/workspace/ruby/autoaiga/run.rb:9:in `<main>'
+I, [2015-10-26 16:20:18#8176]  INFO -- : [Case]End: ID: 2, name: 搜索目录, eclapse: 3.385193, result: 1, message: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id="catalogCode4Qry"]"}
+  (Session info: chrome=45.0.2454.85)
+  (Driver info: chromedriver=2.18.343845 (73dd713ba7fbfb73cbb514e62641d8c96a94682a),platform=Windows NT 6.1 SP1 x86_64)
+I, [2015-10-26 16:20:18#8176]  INFO -- : [Recover]Start
+I, [2015-10-26 16:20:22#8176]  INFO -- : [Recover]End
+I, [2015-10-26 16:20:22#8176]  INFO -- : Run: test_delete_dir
+I, [2015-10-26 16:20:22#8176]  INFO -- : [Case]Start: ID: 3, name: 搜索目录
+I, [2015-10-26 16:20:22#8176]  INFO -- : [Case]Start: ID: 3, name: 搜索目录
+E, [2015-10-26 16:20:25#8176] ERROR -- : message: null
+	error: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id="catalogCode4Qry"]"}
+  (Session info: chrome=45.0.2454.85)
+  (Driver info: chromedriver=2.18.343845 (73dd713ba7fbfb73cbb514e62641d8c96a94682a),platform=Windows NT 6.1 SP1 x86_64)
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_953.png
+	backtrace: d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/response.rb:71:in `assert_ok'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/response.rb:34:in `initialize'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/common.rb:78:in `new'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/common.rb:78:in `create_response'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/default.rb:90:in `request'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/common.rb:59:in `call'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/bridge.rb:657:in `raw_execute'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/bridge.rb:635:in `execute'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/bridge.rb:603:in `find_element_by'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/common/search_context.rb:61:in `find_element'
+D:/workspace/ruby/autoaiga/lib/aielement_container.rb:29:in `element_no_name'
+D:/workspace/ruby/autoaiga/lib/aielement_container.rb:32:in `element_by_name'
+D:/workspace/ruby/autoaiga/lib/aielement_container.rb:23:in `element'
+D:/workspace/ruby/autoaiga/lib/aielement_container.rb:63:in `fetch_element_from_gui'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:81:in `test_delete_dir'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:37:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:33:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:33:in `run_case_test_method'
+D:/workspace/ruby/autoaiga/run.rb:9:in `<main>'
+I, [2015-10-26 16:20:25#8176]  INFO -- : [Case]End: ID: 3, name: 搜索目录, eclapse: 3.32719, result: 1, message: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id="catalogCode4Qry"]"}
+  (Session info: chrome=45.0.2454.85)
+  (Driver info: chromedriver=2.18.343845 (73dd713ba7fbfb73cbb514e62641d8c96a94682a),platform=Windows NT 6.1 SP1 x86_64)
+I, [2015-10-26 16:26:00#10068]  INFO -- : [Recover]Start
+I, [2015-10-26 16:26:02#10068]  INFO -- : [Recover]End
+I, [2015-10-26 16:26:02#10068]  INFO -- : Run: test_new_dir
+I, [2015-10-26 16:26:02#10068]  INFO -- : [Case]Start: ID: 1, name: 新增目录案例
+E, [2015-10-26 16:26:15#10068] ERROR -- : message: null
+	error: Error Alert in window. information:新增数据失败!配置异常-事件模板配置类异常-模板目录新增，系统下出现重复编码目录
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_183.png
+	backtrace: D:/workspace/ruby/autoaiga/cep/cep.rb:22:in `cep_alert'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:51:in `test_new_dir'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:37:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:33:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:33:in `run_case_test_method'
+D:/workspace/ruby/autoaiga/run.rb:9:in `<main>'
+I, [2015-10-26 16:26:15#10068]  INFO -- : [Case]End: ID: 1, name: 新增目录案例, eclapse: 13.160752, result: 1, message: Error Alert in window. information:新增数据失败!配置异常-事件模板配置类异常-模板目录新增，系统下出现重复编码目录
+I, [2015-10-26 16:26:15#10068]  INFO -- : [Recover]Start
+I, [2015-10-26 16:26:19#10068]  INFO -- : [Recover]End
+I, [2015-10-26 16:26:19#10068]  INFO -- : Run: test_search
+I, [2015-10-26 16:26:20#10068]  INFO -- : [Case]Start: ID: 2, name: 搜索目录
+I, [2015-10-26 16:26:24#10068]  INFO -- : true
+I, [2015-10-26 16:26:24#10068]  INFO -- : [Case]End: ID: 2, name: 搜索目录, eclapse: 3.746215, result: 0, message: 搜索目录成功
+I, [2015-10-26 16:26:24#10068]  INFO -- : [Recover]Start
+I, [2015-10-26 16:26:27#10068]  INFO -- : [Recover]End
+I, [2015-10-26 16:26:27#10068]  INFO -- : Run: test_delete_dir
+I, [2015-10-26 16:26:28#10068]  INFO -- : [Case]Start: ID: 3, name: 搜索目录
+E, [2015-10-26 16:26:31#10068] ERROR -- : message: null
+	error: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id="catalogCode4Qry"]"}
+  (Session info: chrome=45.0.2454.85)
+  (Driver info: chromedriver=2.18.343845 (73dd713ba7fbfb73cbb514e62641d8c96a94682a),platform=Windows NT 6.1 SP1 x86_64)
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_708.png
+	backtrace: d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/response.rb:71:in `assert_ok'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/response.rb:34:in `initialize'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/common.rb:78:in `new'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/common.rb:78:in `create_response'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/default.rb:90:in `request'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/common.rb:59:in `call'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/bridge.rb:657:in `raw_execute'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/bridge.rb:635:in `execute'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/bridge.rb:603:in `find_element_by'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/common/search_context.rb:61:in `find_element'
+D:/workspace/ruby/autoaiga/lib/aielement_container.rb:29:in `element_no_name'
+D:/workspace/ruby/autoaiga/lib/aielement_container.rb:32:in `element_by_name'
+D:/workspace/ruby/autoaiga/lib/aielement_container.rb:23:in `element'
+D:/workspace/ruby/autoaiga/lib/aielement_container.rb:63:in `fetch_element_from_gui'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:83:in `test_delete_dir'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:37:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:33:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:33:in `run_case_test_method'
+D:/workspace/ruby/autoaiga/run.rb:9:in `<main>'
+I, [2015-10-26 16:26:31#10068]  INFO -- : [Case]End: ID: 3, name: 搜索目录, eclapse: 3.441197, result: 1, message: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id="catalogCode4Qry"]"}
+  (Session info: chrome=45.0.2454.85)
+  (Driver info: chromedriver=2.18.343845 (73dd713ba7fbfb73cbb514e62641d8c96a94682a),platform=Windows NT 6.1 SP1 x86_64)
+I, [2015-10-26 16:32:32#6496]  INFO -- : [Recover]Start
+I, [2015-10-26 16:32:34#6496]  INFO -- : [Recover]End
+I, [2015-10-26 16:32:34#6496]  INFO -- : Run: test_delete_dir
+I, [2015-10-26 16:32:35#6496]  INFO -- : [Case]Start: ID: 3, name: 搜索目录
+I, [2015-10-26 16:32:38#6496]  INFO -- : [Case]End: ID: 3, name: 搜索目录, eclapse: 3.750214, result: 0, message: 删除目录成功
+I, [2015-10-26 16:34:09#1356]  INFO -- : [Recover]Start
+I, [2015-10-26 16:34:10#1356]  INFO -- : [Recover]End
+I, [2015-10-26 16:34:10#1356]  INFO -- : Run: test_delete_dir
+I, [2015-10-26 16:34:12#1356]  INFO -- : [Case]Start: ID: 3, name: 搜索目录
+I, [2015-10-26 16:34:14#1356]  INFO -- : [Case]End: ID: 3, name: 搜索目录, eclapse: 2.470141, result: 0, message: 删除目录成功
+I, [2015-10-26 16:40:04#6800]  INFO -- : [Recover]Start
+I, [2015-10-26 16:40:05#6800]  INFO -- : [Recover]End
+I, [2015-10-26 16:40:05#6800]  INFO -- : Run: test_delete_dir
+I, [2015-10-26 16:40:06#6800]  INFO -- : [Case]Start: ID: 3, name: 搜索目录
+I, [2015-10-26 16:40:08#6800]  INFO -- : [Case]End: ID: 3, name: 搜索目录, eclapse: 2.319132, result: 0, message: 删除目录成功
+E, [2015-10-26 16:40:09#6800] ERROR -- : message: null
+	error: Error Alert in window. information:请选择一条数据!
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_838.png
+	backtrace: D:/workspace/ruby/autoaiga/cep/cep.rb:22:in `cep_alert'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:91:in `test_delete_dir'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:46:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:42:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:42:in `run_case_test_method'
+D:/workspace/ruby/autoaiga/run.rb:10:in `<main>'
+I, [2015-10-26 16:41:00#8268]  INFO -- : [Recover]Start
+I, [2015-10-26 16:41:02#8268]  INFO -- : [Recover]End
+I, [2015-10-26 16:41:02#8268]  INFO -- : Run: test_new_dir
+I, [2015-10-26 16:41:02#8268]  INFO -- : [Case]Start: ID: 1, name: 新增目录案例
+I, [2015-10-26 16:41:18#8268]  INFO -- : [Case]End: ID: 1, name: 新增目录案例, eclapse: 15.640895, result: 0, message: 新增目录成功
+I, [2015-10-26 16:41:18#8268]  INFO -- : [Recover]Start
+I, [2015-10-26 16:41:21#8268]  INFO -- : [Recover]End
+I, [2015-10-26 16:41:21#8268]  INFO -- : Run: test_search
+I, [2015-10-26 16:41:22#8268]  INFO -- : [Case]Start: ID: 2, name: 搜索目录
+I, [2015-10-26 16:41:25#8268]  INFO -- : true
+I, [2015-10-26 16:41:25#8268]  INFO -- : [Case]End: ID: 2, name: 搜索目录, eclapse: 3.740214, result: 0, message: 搜索目录成功
+I, [2015-10-26 16:41:25#8268]  INFO -- : [Recover]Start
+I, [2015-10-26 16:41:29#8268]  INFO -- : [Recover]End
+I, [2015-10-26 16:41:29#8268]  INFO -- : Run: test_delete_dir
+I, [2015-10-26 16:41:29#8268]  INFO -- : [Case]Start: ID: 3, name: 搜索目录
+I, [2015-10-26 16:41:32#8268]  INFO -- : [Case]End: ID: 3, name: 搜索目录, eclapse: 2.590148, result: 0, message: 删除目录成功
+I, [2015-10-26 16:44:21#1732]  INFO -- : [Recover]Start
+I, [2015-10-26 16:46:07#9860]  INFO -- : [Recover]Start
+I, [2015-10-26 16:46:09#9860]  INFO -- : [Recover]End
+I, [2015-10-26 16:46:09#9860]  INFO -- : Run: test_search
+I, [2015-10-26 16:46:11#9860]  INFO -- : [Case]Start: ID: 2, name: 搜索目录
+E, [2015-10-26 16:46:17#9860] ERROR -- : message: null
+	error: no such element: Unable to locate element: {"method":"xpath","selector":"//table[@class="ui-table"]//td[text()="123"]"}
+  (Session info: chrome=45.0.2454.85)
+  (Driver info: chromedriver=2.18.343845 (73dd713ba7fbfb73cbb514e62641d8c96a94682a),platform=Windows NT 6.1 SP1 x86_64)
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_765.png
+	backtrace: d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/response.rb:71:in `assert_ok'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/response.rb:34:in `initialize'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/common.rb:78:in `new'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/common.rb:78:in `create_response'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/default.rb:90:in `request'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/common.rb:59:in `call'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/bridge.rb:657:in `raw_execute'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/bridge.rb:635:in `execute'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/bridge.rb:603:in `find_element_by'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/common/search_context.rb:61:in `find_element'
+D:/workspace/ruby/autoaiga/lib/aielement_container.rb:29:in `element_no_name'
+D:/workspace/ruby/autoaiga/lib/aielement_container.rb:21:in `element'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:68:in `test_search'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:48:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:44:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:44:in `run_case_test_method'
+D:/workspace/ruby/autoaiga/run.rb:11:in `<main>'
+I, [2015-10-26 16:46:17#9860]  INFO -- : [Case]End: ID: 2, name: 搜索目录, eclapse: 6.882394, result: 1, message: no such element: Unable to locate element: {"method":"xpath","selector":"//table[@class="ui-table"]//td[text()="123"]"}
+  (Session info: chrome=45.0.2454.85)
+  (Driver info: chromedriver=2.18.343845 (73dd713ba7fbfb73cbb514e62641d8c96a94682a),platform=Windows NT 6.1 SP1 x86_64)
+I, [2015-10-26 16:49:34#6920]  INFO -- : [Recover]Start
+I, [2015-10-26 16:49:35#6920]  INFO -- : [Recover]End
+I, [2015-10-26 16:49:35#6920]  INFO -- : Run: test_search
+I, [2015-10-26 16:49:36#6920]  INFO -- : [Case]Start: ID: 2, name: 搜索目录
+E, [2015-10-26 16:49:43#6920] ERROR -- : message: null
+	error: no such element: Unable to locate element: {"method":"xpath","selector":"//table[@class="ui-table"]//td[text()="123"]"}
+  (Session info: chrome=45.0.2454.85)
+  (Driver info: chromedriver=2.18.343845 (73dd713ba7fbfb73cbb514e62641d8c96a94682a),platform=Windows NT 6.1 SP1 x86_64)
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_125.png
+	backtrace: d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/response.rb:71:in `assert_ok'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/response.rb:34:in `initialize'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/common.rb:78:in `new'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/common.rb:78:in `create_response'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/default.rb:90:in `request'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/common.rb:59:in `call'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/bridge.rb:657:in `raw_execute'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/bridge.rb:635:in `execute'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/bridge.rb:603:in `find_element_by'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/common/search_context.rb:61:in `find_element'
+D:/workspace/ruby/autoaiga/lib/aielement_container.rb:29:in `element_no_name'
+D:/workspace/ruby/autoaiga/lib/aielement_container.rb:21:in `element'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:68:in `test_search'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:48:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:44:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:44:in `run_case_test_method'
+D:/workspace/ruby/autoaiga/run.rb:11:in `<main>'
+I, [2015-10-26 16:49:43#6920]  INFO -- : [Case]End: ID: 2, name: 搜索目录, eclapse: 6.698383, result: 1, message: no such element: Unable to locate element: {"method":"xpath","selector":"//table[@class="ui-table"]//td[text()="123"]"}
+  (Session info: chrome=45.0.2454.85)
+  (Driver info: chromedriver=2.18.343845 (73dd713ba7fbfb73cbb514e62641d8c96a94682a),platform=Windows NT 6.1 SP1 x86_64)
+I, [2015-10-26 16:53:19#8916]  INFO -- : [Recover]Start
+I, [2015-10-26 16:53:20#8916]  INFO -- : [Recover]End
+I, [2015-10-26 16:53:20#8916]  INFO -- : Run: test_search
+I, [2015-10-26 16:53:21#8916]  INFO -- : [Case]Start: ID: 2, name: 搜索目录
+E, [2015-10-26 16:53:28#8916] ERROR -- : message: null
+	error: no such element: Unable to locate element: {"method":"xpath","selector":"//table[@class="ui-table"]//td[text()="123"]"}
+  (Session info: chrome=45.0.2454.85)
+  (Driver info: chromedriver=2.18.343845 (73dd713ba7fbfb73cbb514e62641d8c96a94682a),platform=Windows NT 6.1 SP1 x86_64)
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_928.png
+	backtrace: d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/response.rb:71:in `assert_ok'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/response.rb:34:in `initialize'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/common.rb:78:in `new'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/common.rb:78:in `create_response'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/default.rb:90:in `request'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/common.rb:59:in `call'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/bridge.rb:657:in `raw_execute'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/bridge.rb:635:in `execute'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/bridge.rb:603:in `find_element_by'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/common/search_context.rb:61:in `find_element'
+D:/workspace/ruby/autoaiga/lib/aielement_container.rb:29:in `element_no_name'
+D:/workspace/ruby/autoaiga/lib/aielement_container.rb:21:in `element'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:68:in `test_search'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:44:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:44:in `run_case_test_method'
+D:/workspace/ruby/autoaiga/run.rb:11:in `<main>'
+I, [2015-10-26 16:53:28#8916]  INFO -- : [Case]End: ID: 2, name: 搜索目录, eclapse: 6.789388, result: 1, message: no such element: Unable to locate element: {"method":"xpath","selector":"//table[@class="ui-table"]//td[text()="123"]"}
+  (Session info: chrome=45.0.2454.85)
+  (Driver info: chromedriver=2.18.343845 (73dd713ba7fbfb73cbb514e62641d8c96a94682a),platform=Windows NT 6.1 SP1 x86_64)
+I, [2015-10-26 16:58:26#9900]  INFO -- : [Recover]Start
+I, [2015-10-26 16:58:29#9900]  INFO -- : [Recover]End
+I, [2015-10-26 16:58:29#9900]  INFO -- : Run: test_search
+I, [2015-10-26 16:58:32#9900]  INFO -- : [Case]Start: ID: 2, name: 搜索目录
+E, [2015-10-26 16:58:37#9900] ERROR -- : message: null
+	error: assert fail: 判断是否存在查询结果
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_941.png
+	backtrace: D:/workspace/ruby/autoaiga/lib/ailog.rb:126:in `case_assert'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:68:in `test_search'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:44:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:44:in `run_case_test_method'
+D:/workspace/ruby/autoaiga/run.rb:11:in `<main>'
+I, [2015-10-26 16:58:37#9900]  INFO -- : [Case]End: ID: 2, name: 搜索目录, eclapse: 4.505257, result: 1, message: assert fail: 判断是否存在查询结果
+I, [2015-10-26 16:59:02#8452]  INFO -- : [Recover]Start
+I, [2015-10-26 16:59:04#8452]  INFO -- : [Recover]End
+I, [2015-10-26 16:59:04#8452]  INFO -- : Run: test_search
+I, [2015-10-26 16:59:05#8452]  INFO -- : [Case]Start: ID: 2, name: 搜索目录
+E, [2015-10-26 16:59:09#8452] ERROR -- : message: null
+	error: assert fail: 判断是否存在查询结果
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_698.png
+	backtrace: D:/workspace/ruby/autoaiga/lib/ailog.rb:126:in `case_assert'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:68:in `test_search'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:44:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:44:in `run_case_test_method'
+D:/workspace/ruby/autoaiga/run.rb:11:in `<main>'
+I, [2015-10-26 16:59:09#8452]  INFO -- : [Case]End: ID: 2, name: 搜索目录, eclapse: 4.460255, result: 1, message: assert fail: 判断是否存在查询结果
+I, [2015-10-26 17:00:09#8916]  INFO -- : [Recover]Start
+I, [2015-10-26 17:00:11#8916]  INFO -- : [Recover]End
+I, [2015-10-26 17:00:11#8916]  INFO -- : Run: test_new_dir
+I, [2015-10-26 17:00:11#8916]  INFO -- : [Case]Start: ID: 1, name: 新增目录案例
+E, [2015-10-26 17:00:25#8916] ERROR -- : message: null
+	error: no such element: Unable to locate element: {"method":"xpath","selector":"//button[contains(@class, "aui_state_highlight") and text()="确定"]"}
+  (Session info: chrome=45.0.2454.85)
+  (Driver info: chromedriver=2.18.343845 (73dd713ba7fbfb73cbb514e62641d8c96a94682a),platform=Windows NT 6.1 SP1 x86_64)
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_75.png
+	backtrace: d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/response.rb:71:in `assert_ok'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/response.rb:34:in `initialize'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/common.rb:78:in `new'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/common.rb:78:in `create_response'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/default.rb:90:in `request'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/common.rb:59:in `call'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/bridge.rb:657:in `raw_execute'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/bridge.rb:635:in `execute'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/bridge.rb:603:in `find_element_by'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/common/search_context.rb:61:in `find_element'
+D:/workspace/ruby/autoaiga/cep/cep.rb:24:in `cep_alert'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:51:in `test_new_dir'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:44:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:44:in `run_case_test_method'
+D:/workspace/ruby/autoaiga/run.rb:11:in `<main>'
+I, [2015-10-26 17:00:25#8916]  INFO -- : [Case]End: ID: 1, name: 新增目录案例, eclapse: 14.476828, result: 1, message: no such element: Unable to locate element: {"method":"xpath","selector":"//button[contains(@class, "aui_state_highlight") and text()="确定"]"}
+  (Session info: chrome=45.0.2454.85)
+  (Driver info: chromedriver=2.18.343845 (73dd713ba7fbfb73cbb514e62641d8c96a94682a),platform=Windows NT 6.1 SP1 x86_64)
+I, [2015-10-26 17:00:25#8916]  INFO -- : [Recover]Start
+I, [2015-10-26 17:00:29#8916]  INFO -- : [Recover]End
+I, [2015-10-26 17:00:29#8916]  INFO -- : Run: test_search
+I, [2015-10-26 17:00:30#8916]  INFO -- : [Case]Start: ID: 2, name: 搜索目录
+E, [2015-10-26 17:00:34#8916] ERROR -- : message: null
+	error: assert fail: 判断是否存在查询结果
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_189.png
+	backtrace: D:/workspace/ruby/autoaiga/lib/ailog.rb:126:in `case_assert'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:68:in `test_search'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:44:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:44:in `run_case_test_method'
+D:/workspace/ruby/autoaiga/run.rb:11:in `<main>'
+I, [2015-10-26 17:00:34#8916]  INFO -- : [Case]End: ID: 2, name: 搜索目录, eclapse: 3.968226, result: 1, message: assert fail: 判断是否存在查询结果
+I, [2015-10-26 17:00:34#8916]  INFO -- : [Recover]Start
+I, [2015-10-26 17:00:37#8916]  INFO -- : [Recover]End
+I, [2015-10-26 17:00:37#8916]  INFO -- : Run: test_delete_dir
+I, [2015-10-26 17:00:39#8916]  INFO -- : [Case]Start: ID: 3, name: 搜索目录
+I, [2015-10-26 17:00:41#8916]  INFO -- : [Case]End: ID: 3, name: 搜索目录, eclapse: 2.164124, result: 0, message: 删除目录成功
+E, [2015-10-26 17:00:42#8916] ERROR -- : message: null
+	error: Error Alert in window. information:请选择一条数据!
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_813.png
+	backtrace: D:/workspace/ruby/autoaiga/cep/cep.rb:22:in `cep_alert'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:92:in `test_delete_dir'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:44:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:44:in `run_case_test_method'
+D:/workspace/ruby/autoaiga/run.rb:11:in `<main>'
+I, [2015-10-26 17:01:15#10016]  INFO -- : [Recover]Start
+I, [2015-10-26 17:01:17#10016]  INFO -- : [Recover]End
+I, [2015-10-26 17:01:17#10016]  INFO -- : Run: test_new_dir
+I, [2015-10-26 17:01:17#10016]  INFO -- : [Case]Start: ID: 1, name: 新增目录案例
+I, [2015-10-26 17:01:28#10016]  INFO -- : [Case]End: ID: 1, name: 新增目录案例, eclapse: 11.641666, result: 0, message: 新增目录成功
+I, [2015-10-26 17:01:28#10016]  INFO -- : [Recover]Start
+I, [2015-10-26 17:01:32#10016]  INFO -- : [Recover]End
+I, [2015-10-26 17:01:32#10016]  INFO -- : Run: test_search
+I, [2015-10-26 17:01:33#10016]  INFO -- : [Case]Start: ID: 2, name: 搜索目录
+E, [2015-10-26 17:01:37#10016] ERROR -- : message: null
+	error: assert fail: 判断是否存在查询结果
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_23.png
+	backtrace: D:/workspace/ruby/autoaiga/lib/ailog.rb:126:in `case_assert'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:68:in `test_search'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:44:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:44:in `run_case_test_method'
+D:/workspace/ruby/autoaiga/run.rb:11:in `<main>'
+I, [2015-10-26 17:01:37#10016]  INFO -- : [Case]End: ID: 2, name: 搜索目录, eclapse: 4.273244, result: 1, message: assert fail: 判断是否存在查询结果
+I, [2015-10-26 17:01:37#10016]  INFO -- : [Recover]Start
+I, [2015-10-26 17:01:41#10016]  INFO -- : [Recover]End
+I, [2015-10-26 17:01:41#10016]  INFO -- : Run: test_delete_dir
+I, [2015-10-26 17:01:41#10016]  INFO -- : [Case]Start: ID: 3, name: 搜索目录
+I, [2015-10-26 17:01:44#10016]  INFO -- : [Case]End: ID: 3, name: 搜索目录, eclapse: 2.753158, result: 0, message: 删除目录成功
+I, [2015-10-26 17:09:26#9880]  INFO -- : [Recover]Start
+I, [2015-10-26 17:09:28#9880]  INFO -- : [Recover]End
+I, [2015-10-26 17:09:28#9880]  INFO -- : Run: test_new_dir
+I, [2015-10-26 17:09:28#9880]  INFO -- : [Case]Start: ID: 1, name: 新增目录案例
+I, [2015-10-26 17:09:44#9880]  INFO -- : [Case]End: ID: 1, name: 新增目录案例, eclapse: 15.89791, result: 0, message: 新增目录成功
+I, [2015-10-26 17:09:44#9880]  INFO -- : [Recover]Start
+I, [2015-10-26 17:09:48#9880]  INFO -- : [Recover]End
+I, [2015-10-26 17:09:48#9880]  INFO -- : Run: test_search
+I, [2015-10-26 17:09:48#9880]  INFO -- : [Case]Start: ID: 2, name: 搜索目录
+E, [2015-10-26 17:09:52#9880] ERROR -- : message: null
+	error: assert fail: 判断是否存在查询结果
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_516.png
+	backtrace: D:/workspace/ruby/autoaiga/lib/ailog.rb:126:in `case_assert'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:68:in `test_search'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:55:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `run_case_test_method'
+D:/workspace/ruby/autoaiga/run.rb:14:in `<main>'
+I, [2015-10-26 17:09:52#9880]  INFO -- : [Case]End: ID: 2, name: 搜索目录, eclapse: 3.876222, result: 1, message: assert fail: 判断是否存在查询结果
+I, [2015-10-26 17:09:52#9880]  INFO -- : [Recover]Start
+I, [2015-10-26 17:09:56#9880]  INFO -- : [Recover]End
+I, [2015-10-26 17:09:56#9880]  INFO -- : Run: test_delete_dir
+I, [2015-10-26 17:09:56#9880]  INFO -- : [Case]Start: ID: 3, name: 搜索目录
+I, [2015-10-26 17:09:59#9880]  INFO -- : [Case]End: ID: 3, name: 搜索目录, eclapse: 2.642151, result: 0, message: 删除目录成功
+I, [2015-10-26 17:10:45#4664]  INFO -- : [Recover]Start
+I, [2015-10-26 17:10:47#4664]  INFO -- : [Recover]End
+I, [2015-10-26 17:10:47#4664]  INFO -- : Run: test_new_dir
+I, [2015-10-26 17:10:47#4664]  INFO -- : [Case]Start: ID: 1, name: 新增目录案例
+I, [2015-10-26 17:11:03#4664]  INFO -- : [Case]End: ID: 1, name: 新增目录案例, eclapse: 16.410939, result: 0, message: 新增目录成功
+I, [2015-10-26 17:12:26#4664]  INFO -- : [Recover]Start
+I, [2015-10-26 17:12:30#4664]  INFO -- : [Recover]End
+I, [2015-10-26 17:12:30#4664]  INFO -- : Run: test_new_dir
+I, [2015-10-26 17:12:30#4664]  INFO -- : [Case]Start: ID: 1, name: 新增目录案例
+E, [2015-10-26 17:12:41#4664] ERROR -- : message: null
+	error: Error Alert in window. information:新增数据失败!配置异常-事件模板配置类异常-模板目录新增，系统下出现重复编码目录
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_990.png
+	backtrace: D:/workspace/ruby/autoaiga/cep/cep.rb:22:in `cep_alert'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:51:in `test_new_dir'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:55:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `run_case_test_method'
+run.rb:14:in `<top (required)>'
+(irb):4:in `load'
+(irb):4:in `irb_binding'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/workspace.rb:80:in `eval'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/workspace.rb:80:in `evaluate'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/context.rb:254:in `evaluate'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:159:in `block (2 levels) in eval_input'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:273:in `signal_status'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:156:in `block in eval_input'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/ruby-lex.rb:243:in `block (2 levels) in each_top_level_statement'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/ruby-lex.rb:229:in `loop'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/ruby-lex.rb:229:in `block in each_top_level_statement'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/ruby-lex.rb:228:in `catch'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/ruby-lex.rb:228:in `each_top_level_statement'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:155:in `eval_input'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:70:in `block in start'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:69:in `catch'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:69:in `start'
+d:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+I, [2015-10-26 17:12:41#4664]  INFO -- : [Case]End: ID: 1, name: 新增目录案例, eclapse: 10.263588, result: 1, message: Error Alert in window. information:新增数据失败!配置异常-事件模板配置类异常-模板目录新增，系统下出现重复编码目录
+I, [2015-10-26 17:12:58#10208]  INFO -- : [Recover]Start
+I, [2015-10-26 17:13:00#10208]  INFO -- : [Recover]End
+I, [2015-10-26 17:13:00#10208]  INFO -- : Run: test_new_dir
+I, [2015-10-26 17:13:00#10208]  INFO -- : [Case]Start: ID: 1, name: 新增目录案例
+E, [2015-10-26 17:13:13#10208] ERROR -- : message: null
+	error: Error Alert in window. information:新增数据失败!配置异常-事件模板配置类异常-模板目录新增，系统下出现重复编码目录
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_157.png
+	backtrace: D:/workspace/ruby/autoaiga/cep/cep.rb:22:in `cep_alert'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:51:in `test_new_dir'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:55:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `run_case_test_method'
+D:/workspace/ruby/autoaiga/run.rb:14:in `<main>'
+I, [2015-10-26 17:13:13#10208]  INFO -- : [Case]End: ID: 1, name: 新增目录案例, eclapse: 13.672782, result: 1, message: Error Alert in window. information:新增数据失败!配置异常-事件模板配置类异常-模板目录新增，系统下出现重复编码目录
+I, [2015-10-26 17:14:20#3784]  INFO -- : [Recover]Start
+I, [2015-10-26 17:14:22#3784]  INFO -- : [Recover]End
+I, [2015-10-26 17:14:22#3784]  INFO -- : Run: test_new_dir
+I, [2015-10-26 17:14:22#3784]  INFO -- : [Case]Start: ID: 1, name: 新增目录案例
+E, [2015-10-26 17:14:34#3784] ERROR -- : message: null
+	error: Error Alert in window. information:新增数据失败!配置异常-事件模板配置类异常-模板目录新增，系统下出现重复编码目录
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_672.png
+	backtrace: D:/workspace/ruby/autoaiga/cep/cep.rb:22:in `cep_alert'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:51:in `test_new_dir'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:55:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `run_case_test_method'
+D:/workspace/ruby/autoaiga/run.rb:14:in `<main>'
+I, [2015-10-26 17:14:34#3784]  INFO -- : [Case]End: ID: 1, name: 新增目录案例, eclapse: 12.207699, result: 1, message: Error Alert in window. information:新增数据失败!配置异常-事件模板配置类异常-模板目录新增，系统下出现重复编码目录
+I, [2015-10-26 17:15:03#8828]  INFO -- : [Recover]Start
+I, [2015-10-26 17:15:04#8828]  INFO -- : [Recover]End
+I, [2015-10-26 17:15:04#8828]  INFO -- : Run: test_new_dir
+I, [2015-10-26 17:15:04#8828]  INFO -- : [Case]Start: ID: 1, name: 新增目录案例
+E, [2015-10-26 17:15:14#8828] ERROR -- : message: null
+	error: Error Alert in window. information:新增数据失败!配置异常-事件模板配置类异常-模板目录新增，系统下出现重复编码目录
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_791.png
+	backtrace: D:/workspace/ruby/autoaiga/cep/cep.rb:22:in `cep_alert'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:51:in `test_new_dir'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:55:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `run_case_test_method'
+D:/workspace/ruby/autoaiga/run.rb:14:in `<main>'
+I, [2015-10-26 17:15:14#8828]  INFO -- : [Case]End: ID: 1, name: 新增目录案例, eclapse: 9.822562, result: 1, message: Error Alert in window. information:新增数据失败!配置异常-事件模板配置类异常-模板目录新增，系统下出现重复编码目录
+I, [2015-10-26 17:15:14#8828]  INFO -- : [Recover]Start
+I, [2015-10-26 17:15:18#8828]  INFO -- : [Recover]End
+I, [2015-10-26 17:15:18#8828]  INFO -- : Run: test_search
+I, [2015-10-26 17:15:18#8828]  INFO -- : [Case]Start: ID: 2, name: 搜索目录
+E, [2015-10-26 17:15:21#8828] ERROR -- : message: null
+	error: assert fail: 判断是否存在查询结果
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_125.png
+	backtrace: D:/workspace/ruby/autoaiga/lib/ailog.rb:126:in `case_assert'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:68:in `test_search'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:55:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `run_case_test_method'
+D:/workspace/ruby/autoaiga/run.rb:14:in `<main>'
+I, [2015-10-26 17:15:21#8828]  INFO -- : [Case]End: ID: 2, name: 搜索目录, eclapse: 3.465198, result: 1, message: assert fail: 判断是否存在查询结果
+I, [2015-10-26 17:15:21#8828]  INFO -- : [Recover]Start
+I, [2015-10-26 17:15:25#8828]  INFO -- : [Recover]End
+I, [2015-10-26 17:15:25#8828]  INFO -- : Run: test_delete_dir
+I, [2015-10-26 17:15:26#8828]  INFO -- : [Case]Start: ID: 3, name: 搜索目录
+I, [2015-10-26 17:15:28#8828]  INFO -- : [Case]End: ID: 3, name: 搜索目录, eclapse: 1.872107, result: 0, message: 删除目录成功
+I, [2015-10-26 17:17:40#2660]  INFO -- : [Recover]Start
+I, [2015-10-26 17:17:42#2660]  INFO -- : [Recover]End
+I, [2015-10-26 17:17:42#2660]  INFO -- : Run: test_new_dir
+I, [2015-10-26 17:17:42#2660]  INFO -- : [Case]Start: ID: 1, name: 新增目录案例
+I, [2015-10-26 17:17:56#2660]  INFO -- : [Case]End: ID: 1, name: 新增目录案例, eclapse: 14.545832, result: 0, message: 新增目录成功
+I, [2015-10-26 17:17:56#2660]  INFO -- : [Recover]Start
+I, [2015-10-26 17:18:00#2660]  INFO -- : [Recover]End
+I, [2015-10-26 17:18:00#2660]  INFO -- : Run: test_search
+I, [2015-10-26 17:18:00#2660]  INFO -- : [Case]Start: ID: 2, name: 搜索目录
+E, [2015-10-26 17:18:04#2660] ERROR -- : message: null
+	error: assert fail: 判断是否存在查询结果
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_796.png
+	backtrace: D:/workspace/ruby/autoaiga/lib/ailog.rb:126:in `case_assert'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:68:in `test_search'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:55:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `run_case_test_method'
+D:/workspace/ruby/autoaiga/run.rb:14:in `<main>'
+I, [2015-10-26 17:18:04#2660]  INFO -- : [Case]End: ID: 2, name: 搜索目录, eclapse: 3.859221, result: 1, message: assert fail: 判断是否存在查询结果
+I, [2015-10-26 17:18:04#2660]  INFO -- : [Recover]Start
+I, [2015-10-26 17:18:08#2660]  INFO -- : [Recover]End
+I, [2015-10-26 17:18:08#2660]  INFO -- : Run: test_delete_dir
+I, [2015-10-26 17:18:08#2660]  INFO -- : [Case]Start: ID: 3, name: 搜索目录
+I, [2015-10-26 17:18:10#2660]  INFO -- : [Case]End: ID: 3, name: 搜索目录, eclapse: 2.567147, result: 0, message: 删除目录成功
+I, [2015-10-26 17:23:06#9712]  INFO -- : [Recover]Start
+I, [2015-10-26 17:23:08#9712]  INFO -- : [Recover]End
+I, [2015-10-26 17:23:08#9712]  INFO -- : Run: test_new_dir
+I, [2015-10-26 17:23:08#9712]  INFO -- : [Case]Start: ID: 1, name: 新增目录案例
+I, [2015-10-26 17:23:23#9712]  INFO -- : [Case]End: ID: 1, name: 新增目录案例, eclapse: 14.797846, result: 0, message: 新增目录成功
+I, [2015-10-26 17:23:23#9712]  INFO -- : [Recover]Start
+I, [2015-10-26 17:23:26#9712]  INFO -- : [Recover]End
+I, [2015-10-26 17:23:26#9712]  INFO -- : Run: test_search
+I, [2015-10-26 17:23:26#9712]  INFO -- : [Case]Start: ID: 2, name: 搜索目录
+E, [2015-10-26 17:23:30#9712] ERROR -- : message: null
+	error: assert fail: 判断是否存在查询结果
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_724.png
+	backtrace: D:/workspace/ruby/autoaiga/lib/ailog.rb:126:in `case_assert'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:68:in `test_search'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:55:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `run_case_test_method'
+D:/workspace/ruby/autoaiga/run.rb:20:in `<main>'
+I, [2015-10-26 17:23:30#9712]  INFO -- : [Case]End: ID: 2, name: 搜索目录, eclapse: 4.179239, result: 1, message: assert fail: 判断是否存在查询结果
+I, [2015-10-26 17:23:30#9712]  INFO -- : [Recover]Start
+I, [2015-10-26 17:23:34#9712]  INFO -- : [Recover]End
+I, [2015-10-26 17:23:34#9712]  INFO -- : Run: test_delete_dir
+I, [2015-10-26 17:23:35#9712]  INFO -- : [Case]Start: ID: 3, name: 搜索目录
+I, [2015-10-26 17:23:36#9712]  INFO -- : [Case]End: ID: 3, name: 搜索目录, eclapse: 1.773101, result: 0, message: 删除目录成功
+I, [2015-10-26 17:27:15#9484]  INFO -- : [Recover]Start
+I, [2015-10-26 17:27:17#9484]  INFO -- : [Recover]End
+I, [2015-10-26 17:27:17#9484]  INFO -- : Run: test_search
+I, [2015-10-26 17:27:19#9484]  INFO -- : [Case]Start: ID: 2, name: 搜索目录
+E, [2015-10-26 17:27:23#9484] ERROR -- : message: null
+	error: assert fail: 判断是否存在查询结果
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_592.png
+	backtrace: D:/workspace/ruby/autoaiga/lib/ailog.rb:128:in `case_assert'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:68:in `test_search'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:55:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `run_case_test_method'
+D:/workspace/ruby/autoaiga/run.rb:20:in `<main>'
+I, [2015-10-26 17:27:23#9484]  INFO -- : [Case]End: ID: 2, name: 搜索目录, eclapse: 4.037231, result: 1, message: assert fail: 判断是否存在查询结果
+I, [2015-10-26 17:27:58#4664]  INFO -- : [Recover]Start
+I, [2015-10-26 17:28:00#4664]  INFO -- : [Reover]Reopen the browser...
+I, [2015-10-26 17:28:25#4664]  INFO -- : [Recover]Start
+I, [2015-10-26 17:28:27#4664]  INFO -- : [Reover]Reopen the browser...
+I, [2015-10-26 17:28:48#4664]  INFO -- : [Recover]Start
+I, [2015-10-26 17:28:50#4664]  INFO -- : [Reover]Reopen the browser...
+I, [2015-10-26 17:29:13#8240]  INFO -- : [Recover]Start
+I, [2015-10-26 17:29:15#8240]  INFO -- : [Recover]End
+I, [2015-10-26 17:29:15#8240]  INFO -- : Run: test_new_dir
+I, [2015-10-26 17:29:15#8240]  INFO -- : [Case]Start: ID: 1, name: 新增目录案例
+I, [2015-10-26 17:29:30#8240]  INFO -- : [Case]End: ID: 1, name: 新增目录案例, eclapse: 14.486829, result: 0, message: 新增目录成功
+I, [2015-10-26 17:29:30#8240]  INFO -- : [Recover]Start
+I, [2015-10-26 17:29:34#8240]  INFO -- : [Recover]End
+I, [2015-10-26 17:29:34#8240]  INFO -- : Run: test_search
+I, [2015-10-26 17:29:34#8240]  INFO -- : [Case]Start: ID: 2, name: 搜索目录
+E, [2015-10-26 17:29:38#8240] ERROR -- : message: null
+	error: assert fail: 判断是否存在查询结果
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_448.png
+	backtrace: D:/workspace/ruby/autoaiga/lib/ailog.rb:128:in `case_assert'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:68:in `test_search'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:55:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `run_case_test_method'
+D:/workspace/ruby/autoaiga/run.rb:19:in `<main>'
+I, [2015-10-26 17:29:38#8240]  INFO -- : [Case]End: ID: 2, name: 搜索目录, eclapse: 4.273245, result: 1, message: assert fail: 判断是否存在查询结果
+I, [2015-10-26 17:29:38#8240]  INFO -- : [Recover]Start
+I, [2015-10-26 17:29:42#8240]  INFO -- : [Recover]End
+I, [2015-10-26 17:29:42#8240]  INFO -- : Run: test_delete_dir
+I, [2015-10-26 17:29:43#8240]  INFO -- : [Case]Start: ID: 3, name: 搜索目录
+I, [2015-10-26 17:29:45#8240]  INFO -- : [Case]End: ID: 3, name: 搜索目录, eclapse: 1.945112, result: 0, message: 删除目录成功
+I, [2015-10-26 17:30:59#4416]  INFO -- : [Recover]Start
+I, [2015-10-26 17:31:01#4416]  INFO -- : [Recover]End
+I, [2015-10-26 17:31:01#4416]  INFO -- : Run: test_new_dir
+I, [2015-10-26 17:31:01#4416]  INFO -- : [Case]Start: ID: 1, name: 新增目录案例
+E, [2015-10-26 17:31:27#4416] ERROR -- : message: null
+	error: no such element: Unable to locate element: {"method":"xpath","selector":"//button[contains(@class, "aui_state_highlight") and text()="确定"]"}
+  (Session info: chrome=45.0.2454.85)
+  (Driver info: chromedriver=2.18.343845 (73dd713ba7fbfb73cbb514e62641d8c96a94682a),platform=Windows NT 6.1 SP1 x86_64)
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_433.png
+	backtrace: d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/response.rb:71:in `assert_ok'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/response.rb:34:in `initialize'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/common.rb:78:in `new'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/common.rb:78:in `create_response'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/default.rb:90:in `request'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/http/common.rb:59:in `call'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/bridge.rb:657:in `raw_execute'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/bridge.rb:635:in `execute'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/remote/bridge.rb:603:in `find_element_by'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.47.1/lib/selenium/webdriver/common/search_context.rb:61:in `find_element'
+D:/workspace/ruby/autoaiga/cep/cep.rb:24:in `cep_alert'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:51:in `test_new_dir'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:55:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `run_case_test_method'
+run.rb:19:in `<top (required)>'
+(irb):1:in `load'
+(irb):1:in `irb_binding'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/workspace.rb:80:in `eval'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/workspace.rb:80:in `evaluate'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/context.rb:254:in `evaluate'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:159:in `block (2 levels) in eval_input'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:273:in `signal_status'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:156:in `block in eval_input'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/ruby-lex.rb:243:in `block (2 levels) in each_top_level_statement'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/ruby-lex.rb:229:in `loop'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/ruby-lex.rb:229:in `block in each_top_level_statement'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/ruby-lex.rb:228:in `catch'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/ruby-lex.rb:228:in `each_top_level_statement'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:155:in `eval_input'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:70:in `block in start'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:69:in `catch'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:69:in `start'
+d:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+I, [2015-10-26 17:31:27#4416]  INFO -- : [Case]End: ID: 1, name: 新增目录案例, eclapse: 25.87948, result: 1, message: no such element: Unable to locate element: {"method":"xpath","selector":"//button[contains(@class, "aui_state_highlight") and text()="确定"]"}
+  (Session info: chrome=45.0.2454.85)
+  (Driver info: chromedriver=2.18.343845 (73dd713ba7fbfb73cbb514e62641d8c96a94682a),platform=Windows NT 6.1 SP1 x86_64)
+I, [2015-10-26 17:32:25#4416]  INFO -- : [Recover]Start
+I, [2015-10-26 17:32:30#4416]  INFO -- : [Recover]End
+I, [2015-10-26 17:32:30#4416]  INFO -- : Run: test_search
+I, [2015-10-26 17:32:30#4416]  INFO -- : [Case]Start: ID: 2, name: 搜索目录
+E, [2015-10-26 17:32:34#4416] ERROR -- : message: null
+	error: assert fail: 判断是否存在查询结果
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_389.png
+	backtrace: D:/workspace/ruby/autoaiga/lib/ailog.rb:128:in `case_assert'
+D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:68:in `test_search'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:55:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `run_case_test_method'
+run.rb:19:in `<top (required)>'
+(irb):2:in `load'
+(irb):2:in `irb_binding'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/workspace.rb:80:in `eval'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/workspace.rb:80:in `evaluate'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/context.rb:254:in `evaluate'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:159:in `block (2 levels) in eval_input'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:273:in `signal_status'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:156:in `block in eval_input'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/ruby-lex.rb:243:in `block (2 levels) in each_top_level_statement'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/ruby-lex.rb:229:in `loop'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/ruby-lex.rb:229:in `block in each_top_level_statement'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/ruby-lex.rb:228:in `catch'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/ruby-lex.rb:228:in `each_top_level_statement'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:155:in `eval_input'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:70:in `block in start'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:69:in `catch'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:69:in `start'
+d:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+I, [2015-10-26 17:32:34#4416]  INFO -- : [Case]End: ID: 2, name: 搜索目录, eclapse: 3.799218, result: 1, message: assert fail: 判断是否存在查询结果
+I, [2015-10-26 17:36:39#4416]  INFO -- : [Recover]Start
+I, [2015-10-26 17:36:43#4416]  INFO -- : [Recover]End
+I, [2015-10-26 17:36:43#4416]  INFO -- : Run: test_search
+I, [2015-10-26 17:36:44#4416]  INFO -- : [Case]Start: ID: 2, name: 搜索目录
+E, [2015-10-26 17:36:47#4416] ERROR -- : message: null
+	error: undefined method `>' for false:FalseClass
+	screenshot: D:/workspace/ruby/autoaiga/lib/../result/screenshot/screenshot_31_2005_13_22_33_681.png
+	backtrace: D:/workspace/ruby/autoaiga/cep/case/catalogMgr.rb:68:in `test_search'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:55:in `block in run_case_test_method'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `each'
+D:/workspace/ruby/autoaiga/lib/aiproject.rb:49:in `run_case_test_method'
+run.rb:19:in `<top (required)>'
+(irb):12:in `load'
+(irb):12:in `irb_binding'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/workspace.rb:80:in `eval'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/workspace.rb:80:in `evaluate'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/context.rb:254:in `evaluate'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:159:in `block (2 levels) in eval_input'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:273:in `signal_status'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:156:in `block in eval_input'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/ruby-lex.rb:243:in `block (2 levels) in each_top_level_statement'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/ruby-lex.rb:229:in `loop'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/ruby-lex.rb:229:in `block in each_top_level_statement'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/ruby-lex.rb:228:in `catch'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb/ruby-lex.rb:228:in `each_top_level_statement'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:155:in `eval_input'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:70:in `block in start'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:69:in `catch'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/irb.rb:69:in `start'
+d:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+I, [2015-10-26 17:36:47#4416]  INFO -- : [Case]End: ID: 2, name: 搜索目录, eclapse: 3.100177, result: 1, message: undefined method `>' for false:FalseClass
+I, [2015-10-26 17:37:36#4416]  INFO -- : [Recover]Start
+I, [2015-10-26 17:37:40#4416]  INFO -- : [Recover]End
+I, [2015-10-26 17:37:40#4416]  INFO -- : Run: test_search
+I, [2015-10-26 17:37:41#4416]  INFO -- : [Case]Start: ID: 2, name: 搜索目录
+I, [2015-10-26 17:37:44#4416]  INFO -- : [Case]End: ID: 2, name: 搜索目录, eclapse: 2.552146, result: 0, message: 搜索目录成功
+I, [2015-10-26 17:44:02#10984]  INFO -- : [Recover]Start
+I, [2015-10-26 17:44:04#10984]  INFO -- : [Recover]End
+I, [2015-10-26 17:44:04#10984]  INFO -- : Run: test_search
+I, [2015-10-26 17:44:06#10984]  INFO -- : [Case]Start: ID: 2, name: 搜索目录
+I, [2015-10-26 17:44:10#10984]  INFO -- : [Case]End: ID: 2, name: 搜索目录, eclapse: 3.623207, result: 0, message: 搜索目录成功

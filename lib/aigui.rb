@@ -106,7 +106,5 @@ module AIAuto
 				return count
 			end
 		end
-
-		
 	end
 end

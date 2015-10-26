@@ -7,7 +7,12 @@ Page	主页面
 	事件目录管理菜单	//a[text()="事件目录管理"]
 
 Page	事件管理页面
+	Page	查询
+		目录编码	//input[@id="catalogCode4Qry"]
+		查询按钮	//a/span[text()="查 询"]		
 	新增按钮	//a/span[text()="新增"]
+	删除按钮	//a/span[text()="删除"]
+	表格全选	//table//input[@id="dataCheckAll"]
 	IFrame	新增弹出窗口	//iframe[@name="Openpage/catalogAddNew"]
 		目录新增弹出窗口	//div[text()="目录新增"]
 		目录新增_目录名称	//input[@name="catalogName"]
@@ -18,3 +23,4 @@ Page	事件管理页面
 	iframe	父目录选择窗口	//iframe[contains(@src, "parentCatalogChoose")]
 		日志选项	//span[text()="日志"]
 		确认按钮	//a/span[text()="确认"]
+

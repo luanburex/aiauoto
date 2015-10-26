@@ -14,7 +14,7 @@ module AIAuto
 			end
 		end
 
-		def cep_alert()
+		def cep_alert
 			alerts = @driver.find_elements(:xpath=>'//div[contains(@class, "aui_outer")]')
 			raise "No Alert Window apppeared." if(alerts.size <= 0)
 			error_alerts = @driver.find_elements(:xpath=>'//div[contains(@class, "aui_outer")]//div[contains(@style, "error.png")]')
