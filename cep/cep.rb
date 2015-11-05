@@ -1,6 +1,6 @@
 #coding:utf-8
 $LOAD_PATH.unshift  File.expand_path(File.join(File.dirname(__FILE__)))
-require "./lib/aibrowser.rb"
+require "../lib/aibrowser.rb"
 
 module AIAuto
 	class Browser
@@ -84,7 +84,7 @@ Page	主页面
 			@browser.title
 		rescue
 			@logger.log "[Reover]Reopen the browser..."
-			@browser = AIAuto::TestCase.new
+			@browser = AIAuto::TestCase.new(AIAuto::Browser.new :chrome)
 			init_cep_gui
 		end
 		

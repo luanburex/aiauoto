@@ -34,6 +34,19 @@ module AIAuto
 
 
 
+		def switch_window(xpath)
+			@main_window = @driver.window_handle if @main_window.nil?
+			find_window(xpath)
+			yield
+			if(@driver.window_handle != @main_window)
+				@driver.switch_to.window(@main_window)
+				@main_window = nil
+			end
+		end
+
+
+
+
 		def respond_to?(*args)
       		@driver.respond_to?(*args)
    		end
@@ -54,10 +67,33 @@ module Selenium
 
 			attr_accessor :name
 
+
 			def set(content)
 				self.clear
 				self.send_keys content
 			end
+
+			def select(selected_text)
+				tag_name = self.tag_name
+				if not tag_name.downcase == "select"
+					raise "This Element's tagName is not SELECTOR. You can't use this method"
+				end
+				options = self.find_elements(:tag_name=>"option")
+				index = 0
+				options.each do |o|
+					if selected_text.kind_of? String and o.text == selected_text
+						o.click
+					elsif selected_text.kind_of? Regexp and o.text =~ selected_text
+						o.click
+					elsif selected_text.kind_of? Fixnum and index == selected_text
+						o.click
+					end
+					index += 1
+				end
+
+			end
+
+			
 		end
 	end
 end

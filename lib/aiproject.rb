@@ -54,7 +54,13 @@ module AIAuto
 					if(data.nil?)
 						caseObj.__send__(method_name.to_sym)
 					else
-						caseObj.__send__(method_name.to_sym, data)
+						if data.kind_of? Hash
+							caseObj.__send__(method_name.to_sym, data)
+						elsif data.kind_of? Array
+							data.each do |d|
+								caseObj.__send__(method_name.to_sym, d)
+							end
+						end
 					end
 					result[:case_id] = caseObj.logger.now_case_id
 					result[:case_name] = caseObj.logger.now_case_name

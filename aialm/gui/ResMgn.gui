@@ -1,0 +1,29 @@
+Page	机器管理页面
+	IFrame	主页面	//iframe[@id="mainFrame"]
+
+		机器名称搜索	//span[@id="FormRowSet_searchFrm_NAME"]/input
+		查询机器	//input[@value="查询机器"]
+		查询结果表	//table[@id="DataTable_macTbl"]
+		查询结果表第一行第一列	//table[@id="DataTable_macTbl"]/tbody/tr/td
+
+
+		新增按钮	//input[@value="新增机器"]
+		删除机器	//input[@value="删除机器"]
+		保存机器	//input[@value="保存机器"]
+		机器名称	//span[@id="FormRowSet_macInfoFrm_NAME"]/input
+		Mac地址	//span[@id="FormRowSet_macInfoFrm_MAC"]/input
+		IP地址	//span[@id="FormRowSet_macInfoFrm_IP"]/input
+		操作系统输入框	//span[@id="FormRowSet_macInfoFrm_SYSTEM"]/input
+		操作系统选择框	//span[@id="FormRowSet_macInfoFrm_SYSTEM"]/select
+		探测账号	//span[@id="FormRowSet_macInfoFrm_ACCOUNT_NAME"]/input
+		探测密码	//span[@id="FormRowSet_macInfoFrm_ACCOUNT_PASSWORD"]/input
+		资源类型输入框	//span[@id="FormRowSet_macInfoFrm_RES_TYPE"]/input
+		资源类型下拉框	//span[@id="FormRowSet_macInfoFrm_RES_TYPE"]/select
+		机器描述	//span[@id="FormRowSet_macInfoFrm_MAC_DES"]/textarea
+
+		保存成功窗口	//div[@id="ym-window"]
+		保存成功窗口信息	//div[@id="ym-window"]//div[@class="ym-content"]
+		保存成功确定按钮	//div[@id="ym-window"]//input[@type="button"]
+		
+
+		

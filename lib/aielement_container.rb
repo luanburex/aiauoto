@@ -46,7 +46,32 @@ module AIAuto
 			@driver.switch_to.default_content	
 		end
 
+		def find_window(xpath)
+			@driver.window_handles.each do |win|
+				@driver.switch_to.window(win)
+				if (xpath.kind_of? String and (xpath == @driver.title or xpath == @driver.current_url)) or (xpath.kind_of? Regexp and (@driver.title =~ xpath or @driver.current_url =~ xpath))
+					return true
+				end
+			end
+		end
+
+		def fetch_alert
+			alert = nil
+			wait_until(:message=>"等待alert弹出窗口"){
+				begin
+					alert = @driver.switch_to.alert
+				rescue
+				end
+				!alert.nil?
+			}
+			return alert
+		end
+
 		def fetch_element_from_gui(name)
+			if not @main_window.nil?
+				@driver.switch_to.window(@main_window)
+				@main_window = nil
+			end
 			@driver.switch_to.default_content
 			target = @guis[name]
 			raise "Can't find GUI, name: #{name}" if target.nil?
@@ -58,8 +83,12 @@ module AIAuto
 				t_parent = t_parent.parent
 			end
 			path.each do |p|
+
 				if "iframe" == p.type.downcase
 					@driver.switch_to.frame(@driver.find_element(:xpath => p.xpath))
+				elsif "window" == p.type.downcase
+					@main_window = @driver.window_handle if @main_window.nil?
+					find_window(p.xpath)
 				end
 			end
 

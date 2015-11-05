@@ -1,0 +1,19 @@
+Page	资源申请页面
+	IFrame	资源申请单	//iframe[@id="mainFrame"]
+		类型	//select[@id="select_type"]
+		开始时间	//span[@id="FormRowSet_resForm_START_TIME"]/input
+		结束时间	//span[@id="FormRowSet_resForm_END_TIME"]/input
+		申请类型	//select[@id="res_type"]
+		申请IP	//span[@id="FormRowSet_resForm_IP"]/input
+		申请大小	//span[@id="FormRowSet_resForm_APPLY_SIZE"]/input
+		项目组	//select[@id="group_id"]
+		申请名称	//span[@id="FormRowSet_resForm_RES_NAME"]/input
+		申请描述	//span[@id="FormRowSet_resForm_RES_DESC"]/textarea
+		网管审批按钮	//li/p[text()="网管审批"]
+
+		确定按钮	//a/span/span[text()="确定"]
+Window	选择人员窗口	选择人员
+	人员选择树	//div[@id="$Tree_staffTree"]
+	人员列表	//table[@id="DataTable_staffTable"]
+	确定按钮	//input[@id="clear"]
+

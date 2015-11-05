@@ -66,9 +66,6 @@ class CatalogMgr < CepCase
 		@browser.fetch_element_from_gui("事件管理页面.查询.查询按钮").click
 		sleep(2)
 		@logger.case_assert "判断是否存在查询结果", @browser.elements(:xpath=>'//table[@class="ui-table"]//td[text()="' + dir_code + '"]').size > 0
-		#@logger.log @browser.element(:xpath=>'//table[@class="ui-table"]//td[text()="' + dir_code + '"]').displayed?
-
-
 		@logger.case_log_end case_id, case_name, 0, "搜索目录成功"
 	end
 
