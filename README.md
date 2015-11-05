@@ -35,7 +35,7 @@ GUI的缺点：
 类型名称主要分为：Page IFrame Window Element 四种，其中Element类型可忽略不写
 分割要使用[TAB],层次也需要根据[TAB]来设置
 例如：
-···ruby
+```ruby
 Page	机器管理页面
 	IFrame	主页面	//iframe[@id="mainFrame"]
 
@@ -88,17 +88,17 @@ TODO: 处理方式说明
 ##脚本执行
 由于我们的脚本都继承自Testcase，那么就可以通过AIProject来进行执行，执行分集中类型
 1. 执行所有的testXxxx方法：run_case_test_method(class_name)
-```
+```ruby
 p = AIAuto::AIProject.new
 p.run_case_test_method ResStore
 ```
 2. 执行类中的某个方法：run_case_test_method(class_name, function_name)
-```
+```ruby
 p = AIAuto::AIProject.new
 p.run_case_test_method ResStore, :testSubmitApply
 ```
 3. 执行某个方法，使用数据驱动：run_case_test_method(class_name, function_name,datas) datas是由hash构成的数组。（PS：使用这种方法要保证case类中定义的方法，接收data参数）
-```
+```ruby
 data = [{:a=>1, :b=>2}, {:a=>3, :b=>5}]
 p = AIAuto::AIProject.new
 p.run_case_test_method ResStore, :testSubmitApply, data
