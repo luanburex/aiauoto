@@ -2,33 +2,15 @@ module AIAuto
 	class AIProject
 
 		attr_accessor :browser
-		attr_reader :result_stat
 
-		def initialize
-			@result_stat = []
+		def initialize task_name, task_id = nil
+			@task_id = task_id
+			@task_name = task_name
+			@logger = nil
 		end
 
-
-		def fetch_browser
-			@browser ||= AIAuto::Browser.new :chrome
-		end
-
-		def error_log error
-			puts error.message  
-  			puts error.backtrace.inspect
-		end
-
-		def run_case case_class, datas
-			fetch_browser
-			datas.each do |data|
-				begin
-					caseObj = case_class.new @browser
-					caseObj.__send__(:run, data)
-				rescue Exception => e
-					error_log e
-				end
-			end
-			#@browser.quit
+		def end
+			@logger.project_log_end
 		end
 
 		def run_case_test_method case_class, method_filter = nil, data = nil
@@ -42,48 +24,47 @@ module AIAuto
 				method_reg = Regexp.new(method_filter)
 			end
 
-			fetch_browser
 			caseObj = case_class.new @browser
-
-
+			init_logger if @logger.nil?
+			caseObj.logger = @logger
 			caseObj.methods.grep(method_reg).each do |method_name|
-				result = {:case_class=>case_class, :case_method_name=>method_name, :status=> "Start"}
 				begin
-					caseObj.scence_recover if caseObj.respond_to? :scence_recover
-					caseObj.logger.log "Run: #{method_name}"
+
 					if(data.nil?)
+						@logger.case_log_start case_class, method_name
+						caseObj.scence_recover if caseObj.respond_to? :scence_recover
 						caseObj.__send__(method_name.to_sym)
+						@logger.case_log_end
 					else
 						if data.kind_of? Hash
+							@logger.case_log_start case_class, method_name
+							caseObj.scence_recover if caseObj.respond_to? :scence_recover
 							caseObj.__send__(method_name.to_sym, data)
+							@logger.case_log_end
 						elsif data.kind_of? Array
 							data.each do |d|
+								@logger.case_log_start case_class, method_name, d
+								caseObj.scence_recover if caseObj.respond_to? :scence_recover
 								caseObj.__send__(method_name.to_sym, d)
+								@logger.case_log_end
 							end
 						end
 					end
-					result[:case_id] = caseObj.logger.now_case_id
-					result[:case_name] = caseObj.logger.now_case_name
-					result[:status] = "Success"
+					
 
 				rescue Exception => e
-					result[:case_id] = caseObj.logger.now_case_id
-					result[:case_name] = caseObj.logger.now_case_name
-					result[:status] = "Error"
-					result[:message] = e.message
-					caseObj.logger.error e
-					logger = caseObj.logger
-					if !logger.now_case_id.nil? and !logger.now_case_name.nil?
-						logger.case_log_end logger.now_case_id, logger.now_case_name, 1, e.message
-					end
-
+					@logger.case_log_end false, e.message, e 
 				end
-
-
-				@result_stat << result
 			end
 
 
+		end
+
+		private
+		def init_logger
+			raise "browser object is nil" if @browser.nil?
+			@logger = AILog.new @browser
+			@logger.project_log_start  @task_name, @task_id
 		end
 
 	end

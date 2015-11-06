@@ -6,25 +6,19 @@ class CatalogMgr < CepCase
 
 	def initialize browser = nil
 		super(browser)
-		@browser.read_gui("#{File.expand_path(File.join(File.dirname(__FILE__)))}/../gui/catalogMgr.gui")
+		@browser.read_gui("#{File.expand_path(File.join(File.dirname(__FILE__)))}/../gui/CatalogMgr.gui")
 	end
 	
 
 
-	def test_new_dir
-
-		case_id = 1
-		case_name = "新增目录案例"
+	def testNewDir data = {}
 
 		dir_name = "a"
 		dir_code = "123"
 		dir_category = "模板目录"
-		dir_parent_dir = "a"
+		dir_parent_dir = "crm系统"
 
-
-		@logger.case_log_start case_id, case_name
 		
-		#login "aicep", "123"
 		menu "事件注册", "事件目录管理"
 
 		@browser.fetch_gui_wait_display("事件管理页面.新增按钮")
@@ -48,36 +42,30 @@ class CatalogMgr < CepCase
 		@browser.fetch_gui_wait_display("事件管理页面.新增弹出窗口")
 		
 		@browser.fetch_element_from_gui("事件管理页面.新增弹出窗口.目录新增_提交").click
-		@browser.cep_alert()
+		msg = @browser.cep_alert()
+		@logger.assert_true_log msg =~ /保存成功/, "判断是否最终保存成功"
 
-		@logger.case_log_end case_id, case_name, 0, "新增目录成功"
 	end
 
 
-	def test_search
-		case_id = 2
-		case_name = "搜索目录"
+	def testSearch data = {}
 
 		dir_code = "123"
 
 		menu "事件注册", "事件目录管理"
-		@logger.case_log_start case_id, case_name
+		
 		@browser.fetch_element_from_gui("事件管理页面.查询.目录编码").set dir_code
 		@browser.fetch_element_from_gui("事件管理页面.查询.查询按钮").click
 		sleep(2)
-		@logger.case_assert "判断是否存在查询结果", @browser.elements(:xpath=>'//table[@class="ui-table"]//td[text()="' + dir_code + '"]').size > 0
-		@logger.case_log_end case_id, case_name, 0, "搜索目录成功"
+		@logger.assert_true_log @browser.elements(:xpath=>'//table[@class="ui-table"]//td[text()="' + dir_code + '"]').size > 0, "判断是否存在查询结果"
+		
 	end
 
-	def test_delete_dir
-		case_id = 3
-		case_name = "搜索目录"
+	def testDeleteDir data = {}
 
 		dir_code = "123"
 
-
 		menu "事件注册", "事件目录管理"
-		@logger.case_log_start case_id, case_name
 		@browser.fetch_element_from_gui("事件管理页面.查询.目录编码").set dir_code
 		@browser.fetch_element_from_gui("事件管理页面.查询.查询按钮").click
 
@@ -85,10 +73,11 @@ class CatalogMgr < CepCase
 		@browser.fetch_element_from_gui("事件管理页面.表格全选").click
 		@browser.fetch_element_from_gui("事件管理页面.删除按钮").click
 
-		@logger.case_log_end case_id, case_name, 0, "删除目录成功"
 		@browser.cep_alert()
 		sleep(1)
-		@browser.cep_alert()
+		msg = @browser.cep_alert()
+
+		@logger.assert_true_log msg =~ /删除成功/, "判断是否最终删除成功"
 
 	end
 

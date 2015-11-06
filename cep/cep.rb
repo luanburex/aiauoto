@@ -1,6 +1,5 @@
 #coding:utf-8
-$LOAD_PATH.unshift  File.expand_path(File.join(File.dirname(__FILE__)))
-require "../lib/aibrowser.rb"
+require "#{File.expand_path(File.join(File.dirname(__FILE__)))}/../lib/aibrowser.rb"
 
 module AIAuto
 	class Browser
@@ -83,15 +82,16 @@ Page	主页面
 		begin
 			@browser.title
 		rescue
-			@logger.log "[Reover]Reopen the browser..."
+			@logger.log "[Recover]Reopen the browser..."
 			@browser = AIAuto::TestCase.new(AIAuto::Browser.new :chrome)
 			init_cep_gui
 		end
 		
-
+		@logger.log "[Recover]Open Url..."
 		@browser.goto "http://10.1.195.100:8081/aicep-web/page/MainHome"
 		login_username = @browser.find_element_from_gui("登录页面.用户名称输入框")
 		if not login_username.nil?
+			@logger.log "[Recover]Login at Login Page..."
 			login @username, @password
 		end
 

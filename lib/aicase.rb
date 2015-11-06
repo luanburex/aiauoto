@@ -2,12 +2,14 @@ module AIAuto
 	class TestCase
 
 		attr_accessor :browser
-		attr_reader :logger
+		attr_accessor :logger
 
-		def initialize browser = nil
+		def initialize browser = nil, logger = nil
 			@browser = browser
 			@browser ||= AIAuto::Browser.new
-			@logger = AILog.new "#{File.expand_path(File.join(File.dirname(__FILE__)))}/../result", @browser
+			if not logger.nil?
+				@logger = logger
+			end
 		end
 	end
 end

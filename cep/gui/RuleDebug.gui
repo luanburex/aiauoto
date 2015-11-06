@@ -1,0 +1,17 @@
+Page	规则调试页面
+	Page	查询
+		规则名称	//input[@id="ruleCodeQry"]
+		查询按钮	//a/span[text()="查 询"]	
+	表格第一项规则调试	//div[@id="dataTable"]/table/tbody//td//a
+	IFrame	调试窗口	//iframe[contains(@name, "ruleDebug")]
+		第一页下一步	//input[@value="下一步»" and @onclick="changePage(1,0);"]
+		第二页下一步	//input[@value="下一步»" and @onclick="changePage(2,1);"]
+		第三页下一步	//input[@value="下一步»" and @onclick="changePage(3,2);"]
+		提交	//input[@value="提交»"]
+		结果表格	//table[@id="ruleOutputResultTable"]
+		关闭	//input[@value="关闭»"]
+
+
+
+
+
