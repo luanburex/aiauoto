@@ -8,18 +8,315 @@ module AIAuto
 
 	RESULT_LOG_PATH = "result"
 	RESULT_SCREENSHOT_PATH_NAME = "screenshot"
+	WEBDRIVER_TYPE = 3
+
+
+
+	class AIProjectRecorder
+
+		RESULT_STAT = {:PASS=>0, :FAIL=>1, :TIMEOUT=>2, :NOTCOMPLETE=>3}
+
+		attr_accessor :project
+		attr_accessor :now_case_log
+
+		def initialize
+			@project = {}
+		end
+
+		def project_start args
+
+			#common
+			if args.nil? or not (args.kind_of? Hash)
+				args = {}
+			end
+
+
+			task_id = args[:task_id].nil? ? 0 : args[:task_id]
+			task_name = args[:task_name].nil? ? "task_project" : args[:task_name]
+			plan_id = args[:plan_id].nil? ? 0 : args[:plan_id]
+			agent_id = args[:agent_id].nil? ? 0 : args[:agent_id]
+			agent_name = args[:agent_name].nil? ? "localhost" : args[:agent_name]
+			group_no = args[:group_no].nil? ? 0 : args[:group_no]
+			group_name = args[:group_name].nil? ? "(localhost)" : args[:group_name]
+
+			@project[:run_id] = task_id
+			@project[:task_name] = task_name
+			@project[:plan_id] = plan_id
+			@project[:state] = "START"
+			@project[:agent_id] = agent_id
+			@project[:agent_name] = agent_name
+			@project[:run_start_time] = Time.now
+			@project[:run_end_time] = Time.now
+			@project[:group_no] = group_no
+			@project[:group_name] = group_name
+			@project[:case_logs] = []
+
+			#oracle db log
+			@ora_db_conn = nil
+			if not (args[:ora_db_url].nil? or args[:ora_db_username].nil? or args[:ora_db_password].nil?)
+				ora_db_project_start args[:ora_db_url], args[:ora_db_username], args[:ora_db_password], task_id, plan_id, agent_id, agent_name
+			end
+
+		end
+
+		def project_end
+			@project[:state] = "END"
+			@project[:run_end_time] = Time.now
+
+			#oracle db log
+			ora_db_project_end
+		end
+
+		def case_log_start class_name, method_name, data = nil
+			@now_case_log = {}
+			@now_case_log[:script_class_name] = class_name.to_s
+			@now_case_log[:script_method_name] = method_name.to_s
+			@now_case_log[:run_id] = @project[:run_id]
+			@now_case_log[:start_time] = Time.now
+			@now_case_log[:data_value] = data
+
+			@now_case_log[:step_logs] = []
+			@now_case_log[:step_id] = 0
+			@now_case_log[:step_timer] = Time.now
+		end
+
+		def case_log_end args
+
+			if args.nil? or not (args.kind_of? Hash)
+				args = {}
+			end
+
+			script_category = args[:script_category].nil? ? AIAuto::WEBDRIVER_TYPE : args[:script_category]
+			script_id = args[:script_id].nil? ? 0 : args[:script_id]
+			script_name = args[:script_name].nil? ? args[:method_name] : args[:script_name]
+			script_module = args[:script_module].nil? ?args[:class_name] : args[:script_module]
+			data_id = args[:data_id].nil? ? 0 : args[:data_id]
+			data_name = args[:data_name].nil? ? "" : args[:data_name]
+			data_desc = args[:data_desc].nil? ? "" : args[:data_desc]
+			rst_log = args[:rst_log].nil? ? "" : args[:rst_log]
+			key_time_comsuming = args[:key_time_comsuming].nil? ? 0 : args[:key_time_comsuming]
+			result = args[:result].nil? ? AIAuto::AIProjectRecorder::RESULT_STAT[:PASS] : args[:result]
+
+			@now_case_log[:script_category] = script_category
+			@now_case_log[:script_id] = script_id
+			@now_case_log[:script_name] = script_name
+			@now_case_log[:script_module] = script_module
+			@now_case_log[:data_id] = data_id
+			@now_case_log[:data_name] = data_name
+			@now_case_log[:data_desc] = data_desc
+			@now_case_log[:data_attr] = ""
+			@now_case_log[:result] = result
+			@now_case_log[:end_time] = Time.now
+			@now_case_log[:rst_log] = rst_log
+			@now_case_log[:group_no] = @project[:group_no]
+			@now_case_log[:group_name] = @project[:group_name]
+			@now_case_log[:time_consuming] = @now_case_log[:end_time] - @now_case_log[:start_time]
+			@now_case_log[:key_time_comsuming] = key_time_comsuming
+
+			@now_case_log.delete(:step_id)
+			@now_case_log.delete(:step_timer)
+
+			@project[:case_logs] << @now_case_log
+			
+			#oracle db log
+			ora_db_case_end script_id, script_category, script_name, script_module, data_id, data_name, data_desc, @now_case_log[:start_time], @now_case_log[:end_time], result, rst_log, @now_case_log[:end_time] - @now_case_log[:start_time], key_time_comsuming
+
+			#end
+			@now_case_log={}
+		end
+
+		def step_log step_name, step_desc, result, step_expect_result, attach_pic, rst_log
+			step = {}
+
+			step_expect_result = "" if step_expect_result.nil?
+			attach_pic="" if attach_pic.nil?
+			rst_log="" if rst_log.nil?
+			@now_case_log[:step_id] += 1
+			step[:step_id] = @now_case_log[:step_id]
+			step[:step_name] = step_name
+			step[:step_desc] = step_desc
+			step[:step_expect_result] = step_expect_result
+			step[:result] = result
+			step[:start_time] = @now_case_log[:step_timer]
+			@now_case_log[:step_timer] = Time.now
+			step[:eclapse] = @now_case_log[:step_timer] - step[:start_time]
+			step[:attach_pic] = attach_pic
+			step[:rst_log] = rst_log
+
+			@now_case_log[:step_logs] << step
+		end
+
+		def console_print
+
+
+
+			#puts @project
+			puts "=========================================="
+			puts "Project: #{@project[:task_name]}"
+			puts "=========================================="
+			stat = {}
+			stat[:sum] = 0
+			stat[:success] = 0
+			stat[:fail] = 0
+			stat[:start_time] = @project[:run_start_time]
+			stat[:eclapse] = @project[:run_end_time] - @project[:run_start_time]
+			@project[:case_logs].each do |c|
+				if c[:result] == RESULT_STAT[:PASS]
+					stat[:success] += 1
+				else
+					stat[:fail] += 1
+				end
+				stat[:sum] += 1
+				puts "#{c[:script_module].nil? ? "":"#{c[:script_module]}\t"}#{c[:script_name].nil? ? "":"#{c[:script_name]}\t"}#{c[:script_class_name]}.#{c[:script_method_name]}\t#{getResultDisplay c[:result]}\tUse: #{c[:time_consuming]}s"
+			end
+			puts "=========================================="
+			puts "#{stat[:eclapse]}s eclapse, start at #{stat[:start_time]}"
+			puts "#{stat[:sum]} tests total, #{stat[:success]} passed, #{stat[:fail]} failed."
+			puts "#{stat[:success]*100.0 / stat[:sum]} % tests passed."
+			puts "=========================================="
+
+
+
+		end
+
+		def getResultDisplay value
+			RESULT_STAT.find{|k, v| v == value}[0].to_s
+		end
+
+		private
+
+		def ora_db_project_start db_url, db_username, db_passord, task_id, plan_id, agent_id, agent_name
+
+			require "oci8"
+			@ora_db_conn = OCI8.new(db_username, db_passord, db_url)
+			@ora_db_conn.autocommit = true
+			@ora_task_id = task_id
+			if task_id.nil? or task_id == 0
+				@ora_db_conn.exec("select alm_run$seq.nextval from dual") do |r|
+					@ora_task_id = r[0]
+				end
+				cursor = @ora_db_conn.parse('''insert into alm_run (RUN_ID, PLAN_ID, STATE, AGENT_IP, AGENT_ID, RUN_START_TIME, RUN_END_TIME, DEL_MARK, AGENT_TYPE)
+											values (:task_id, :plan_id, 0, :agent_name, :agent_id, sysdate, sysdate, 0, null)''')
+			else
+				@ora_db_conn.exec("select count(*) from alm_run where run_id = #{task_id}") do |r|
+					if (r[0] == 0)
+						cursor = @ora_db_conn.parse('''insert into alm_run (RUN_ID, PLAN_ID, STATE, AGENT_IP, AGENT_ID, RUN_START_TIME, RUN_END_TIME, DEL_MARK, AGENT_TYPE)
+											values (:task_id, :plan_id, 0, :agent_name, :agent_id, sysdate, sysdate, 0, null)''')
+					else
+						cursor = @ora_db_conn.parse('''update alm_run set plan_id = :plan_id, state = 0, AGENT_IP = :agent_name, agent_id = :agent_id, RUN_START_TIME=:run_start_time
+											where RUN_ID=:task_id''')
+					end
+				end
+
+			end
+
+					
+			begin
+				cursor.bind_param(:task_id, @ora_task_id)
+				cursor.bind_param(:plan_id, plan_id)
+				cursor.bind_param(:agent_id, agent_id)
+				cursor.bind_param(:agent_name, agent_name)
+				cursor.bind_param(:run_start_time, @project[:run_start_time])
+
+				cursor.exec()
+			ensure
+				cursor.close
+			end
+
+			return @ora_task_id
+		end
+		def ora_db_project_end
+			if not @ora_db_conn.nil?
+				cursor = @ora_db_conn.parse("update alm_run set state = 10, run_end_time = :run_end_time where run_id = :task_id")
+				begin
+					cursor.bind_param(:task_id, @ora_task_id)
+					cursor.bind_param(:run_end_time, @project[:run_end_time])
+
+					cursor.exec()
+				ensure
+					cursor.close
+				end
+				@ora_db_conn.logoff
+				@ora_task_id = nil
+			end
+		end
+		def ora_db_case_end script_id, script_category, script_name, script_module, data_id, data_name, data_desc, start_time, end_time, result, rst_log, time_consuming, key_time_comsuming
+			if not @ora_db_conn.nil?
+
+				ora_case_log_id = 0
+				@ora_db_conn.exec("select alm_case_log$seq.nextval from dual") do |r|
+					ora_case_log_id = r[0]
+				end
+				
+				cursor = @ora_db_conn.parse('''
+					insert into alm_case_log (CASE_LOG_ID, RUN_ID, CASE_ID, CASE_NAME, CASE_MODULE, DATA_ID, DATA_VALUE, DATA_DESC, START_TIME, END_TIME, RESULT, DATA_ATTR, CASE_RST_LOG, PARENT_ID, TIME_CONSUMING, CASE_CATEGORY, GROUP_NO, GROUP_NAME, KEY_TIME_CONSUMING, CREATE_TIME)
+					values (:case_log_id, :task_id, :script_id, :script_name, :script_module, :data_id, :data_name, :data_desc, :start_time, :end_time, :result, null, :rst_log, \'0\', :time_consuming,  :script_category, :group_no, :group_name, :key_time_comsuming, sysdate)
+					''')			
+				begin
+					cursor.bind_param(:case_log_id, ora_case_log_id)
+					cursor.bind_param(:task_id, @ora_task_id)
+					cursor.bind_param(:script_id, script_id)
+					cursor.bind_param(:script_name, script_name)
+					cursor.bind_param(:script_module, script_module)
+					cursor.bind_param(:script_category, script_category)
+					cursor.bind_param(:data_id, data_id)
+					cursor.bind_param(:data_name, data_name)
+					cursor.bind_param(:data_desc, data_desc)
+					cursor.bind_param(:start_time, start_time)
+					cursor.bind_param(:end_time, end_time)
+					cursor.bind_param(:result, result)
+					cursor.bind_param(:rst_log, rst_log)
+					cursor.bind_param(:time_consuming, time_consuming)
+					cursor.bind_param(:key_time_comsuming, key_time_comsuming)
+					cursor.bind_param(:group_no, "111")
+					cursor.bind_param(:group_name, "")
+					cursor.exec()
+				ensure
+					cursor.close
+				end
+
+
+				@now_case_log[:step_logs].each do |s|
+					cursor = @ora_db_conn.parse('''
+insert into alm_step_log (STEP_LOG_ID, CASE_LOG_ID, STEP_ID, STEP_NAME, STEP_DESC, STEP_EXPECT_RESULT, START_TIME, ECLAPSE, RESULT, ATTACH_PIC, STEP_RST_LOG, IF_PROBEPOINT, PROBEPOINT_DESC)
+values (alm_step_log$seq.nextval, :case_log_id, :step_id, :step_name, :step_desc, :step_expect_result, :start_time, :eclapse, :result, :attach_pic, :rst_log, 0, null)
+''')
+					begin
+						cursor.bind_param(:case_log_id, ora_case_log_id)
+						cursor.bind_param(:step_id, s[:step_id])
+						cursor.bind_param(:step_name, s[:step_name])
+						cursor.bind_param(:step_desc, s[:step_desc])
+						cursor.bind_param(:step_expect_result, s[:step_expect_result])
+						cursor.bind_param(:start_time, s[:start_time])
+						cursor.bind_param(:eclapse, s[:eclapse])
+						cursor.bind_param(:result, s[:result])
+						cursor.bind_param(:attach_pic, s[:attach_pic])
+						cursor.bind_param(:rst_log, s[:rst_log])
+
+						cursor.exec()
+					ensure
+						cursor.close
+					end
+
+				end
+
+			end
+		end
+
+	
+
+	end
 
 	class AILog
 
+
+
+		attr_accessor :now_case_log
 		
-
-		attr_reader :now_run_id
-		attr_reader :now_run_name
-		attr_reader :now_case_id
-		attr_reader :now_case_name
-
 		def initialize browser = nil
 			@browser = browser
+
+			#init logger
 			log_file_path = prepare_path()
 			@logger_file = Logger.new(log_file_path)
 			@logger_file.level = Logger::INFO
@@ -27,6 +324,8 @@ module AIAuto
 			@logger = Logger.new(STDOUT)
 			@logger.level = Logger::INFO
 			@logger.datetime_format = "%Y-%m-%d %H:%M:%S"
+			#init project recorder&case recorder
+			@project_recorder = AIProjectRecorder.new
 		end
 
 
@@ -55,158 +354,49 @@ module AIAuto
 			
 		end
 
-		def project_log_start task_name, task_id = nil
-			@now_task_id = task_id
-			@now_task_name = task_name
-			@project_start_time = Time.now
-			@project_case_result = []
-			@project_run_stat = {:task_name => task_name, :task_id => task_id, :start_time => @project_start_time}
-			@project_run_stat[:case_num] = @project_run_stat[:success_case_num] = @project_run_stat[:fail_case_num] = 0
-			msg = "[Project]start project: #{@now_task_name}, Time: #{@project_start_time}" 
-			log(msg)
+		def project_log_start args = nil
+			log("[Project]start project")
+			@project_recorder.project_start args
 		end
 
 		def project_log_end
-			raise StartTimeNotSetException.new("case_log_start has been executed, start_time is nil") if @project_start_time.nil?
-			
-			# log [Project]end
-			@project_end_time = Time.now
-			@eclapse = @project_end_time - @project_start_time
-			msg = "[Project]end project: #{@now_task_name}, eclapse: #{@eclapse}, start_time:#{@project_start_time}, end_time:#{@project_end_time}"
-			log msg
-
-			# log details
-			puts "-------------------------------------------------"
-			@project_case_result.each do |p| 
-				puts "#{p[:class_name]}.#{p[:method_name]}\t#{p[:result]?"Pass":"Fail"}\tuse #{p[:eclapse]}s"
-			end
-
-			# log statics
-			@project_run_stat[:end_time] = Time.now
-			@project_run_stat[:eclapse] = @project_run_stat[:end_time] - @project_run_stat[:start_time]
-			puts "=============================================="
-			puts "run project #{@project_run_stat[:task_name]}"
-			puts "#{@project_run_stat[:eclapse]}s eclapse, started at #{@project_run_stat[:start_time]}"
-			puts "#{@project_run_stat[:case_num]} tests total, #{@project_run_stat[:success_case_num]} passed, #{@project_run_stat[:fail_case_num]} failed."
-			puts "=============================================="
-
-			@now_task_id = nil
-			@now_task_name = nil
-			@project_start_time = nil
-			@project_end_time = nil
-			@project_case_result = []
-			@project_run_stat = {}
+			@project_recorder.project_end
+			@project_recorder.console_print
 		end
 
 		def case_log_start class_name, method_name, data = nil
-			@now_case = {:class_name => class_name, :method_name => method_name, :data => data}
-			@now_case[:start_time] = Time.now
-			@now_case[:status] = "Start"
-			msg = "[Case](#{@now_case[:class_name]}_#{@now_case[:method_name]}): Start At #{@now_case[:start_time]}"
-			log msg
+			log("[Case](#{class_name}_#{method_name}): Start At #{Time.now}")
+			@project_recorder.case_log_start class_name, method_name, data
+			@now_case_log = {}
+			@now_case_log[:class_name] = class_name
+			@now_case_log[:method_name] = method_name
+			@now_case_log[:data] = data	
 		end
 
 
-		def case_log_end result = true, message = nil, error = nil
-			@now_case[:end_time] = Time.now
-			@now_case[:eclapse] = @now_case[:end_time] - @now_case[:start_time]
 
-			if @now_case[:result].nil?
-				@now_case[:result] = result
-				@now_case[:rst_log] = message
+		def case_log_end result = nil, message = nil
+			log("[Case]End At #{Time.now}")
+			if result.nil?
+				result = @now_case_log[:result]
 			end
-
-
-			msg = "[Case](#{@now_case[:class_name]}_#{@now_case[:method_name]}): End At #{@now_case[:end_time]}, Result: #{@now_case[:result]}"
-			if result
-				log msg
-			else
-				if error.nil?
-					error = StandardError.new(@now_case[:rst_log])
-				end
-				error error, msg
+			if result.nil?
+				result = AIAuto::AIProjectRecorder::RESULT_STAT[:PASS]
 			end
-
-			@project_run_stat[:case_num] += 1
-			if result
-				@project_run_stat[:success_case_num] += 1
-			else
-				@project_run_stat[:fail_case_num] += 1
-			end
-			@project_case_result << @now_case
-			@now_case = nil
+			@now_case_log[:result] = result
+			@now_case_log[:rst_log] = "" if @now_case_log[:rst_log].nil?
+			@now_case_log[:rst_log] += message if not message.nil?
+			@project_recorder.case_log_end  @now_case_log
+			@now_case_log = {}
 		end
 
-=begin
-
-		def case_log_start script_id, script_name, data_id, data_name, data = nil
-
-
-			@now_case = {:script_id => script_id, :script_name => script_name, :data_id => data_id, :data_name => data_name}
-			@now_case[:start_time] = Time.now
-			@now_case[:status] = "Start"
-			msg = "[Case]Start: name: #{@now_case[:script_name]}, data: #{@now_case[:data_name]}, id: #{@now_case[:script_id]}/#{@now_case[:data_id]}, start_time: #{@now_case[:start_time]}"
-			if not data.nil?
-				msg += ", data: #{data}"
+		def step_log step_name, step_desc, result, rst_log = nil, attach_pic = nil, step_expect_result = nil
+			log "[Step]#{step_name}:#{step_desc}, Result: #{@project_recorder.getResultDisplay result}"
+			if result != AIAuto::AIProjectRecorder::RESULT_STAT[:PASS]
+				@now_case_log[:result] = AIAuto::AIProjectRecorder::RESULT_STAT[:FAIL]
 			end
-			log msg
+			@project_recorder.step_log step_name, step_desc, result, step_expect_result, attach_pic, rst_log
 		end
-
-		def case_log_end result = true, message = nil, error = nil
-			@now_case[:end_time] = Time.now
-			@now_case[:eclapse] = @now_case[:end_time] - @now_case[:start_time]
-			@now_case[:result] = result
-			@now_case[:rst_log] = message
-			msg = "[Case]End: name: #{@now_case[:script_name]}, data: #{@now_case[:data_name]}, end_time: #{@now_case[:end_time]}, eclapse: #{@now_case[:eclapse]}"
-			if result
-				log msg
-			else
-				error error, "[Case]name: #{@now_case[:script_name]}, data: #{@now_case[:data_name]}, Error: #{message}"
-			end
-			@project_case_result << @now_case
-			@now_case = nil
-
-		end
-=end
-
-		def step_log step_name, step_desc, result = true
-			if @now_step_start_time.nil?
-				@now_step_start_time = @now_case[:start_time]
-			end
-			eclapse = Time.now - @now_step_start_time
-			msg = "[Step]#{step_name}:#{step_desc}, result: #{result}, #{eclapse}s"
-			if result
-				log msg
-			else
-				warn msg, false
-				if not @now_case.nil?
-					@now_case[:result] = false
-					if @now_case[:rst_log].nil?
-						@now_case[:rst_log] = "Step Error: #{msg}"
-					else
-						@now_case[:rst_log] += "\Step Error: #{msg}"
-					end
-				end
-			end
-
-		end
-
-		def assert_true_log condition, message
-			if condition
-				log "[Assert][Pass]#{message}"
-			else
-				warn "[Assert][Fail]#{message}", false
-				if not @now_case.nil?
-					@now_case[:result] = false
-					if @now_case[:rst_log].nil?
-						@now_case[:rst_log] = "Assert Error: #{message}"
-					else
-						@now_case[:rst_log] += "\nAssert Error: #{message}"
-					end
-				end
-			end
-		end
-
 
 		private
 		def write_log method, msg
