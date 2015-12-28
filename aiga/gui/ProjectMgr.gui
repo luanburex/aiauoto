@@ -1,0 +1,12 @@
+Page	工程管理页面
+	Page	工程新增页面
+		新增按钮	//button[text()="新增"]
+		删除按钮	//button[text()="删除"]
+		查询按钮	//button[text()="查找"]
+		查询工程名称	//input[@id="project_next"]
+		查询脚本类型	//select[@id="category"]
+		查询结果表	//table[@id="test_table"]
+		工程名称	//input[@name="project_name"]
+		脚本类型	//select[@name="category"]
+		保存信息按钮	//input[@value="保存信息"]
+		弹出窗口确认	//div[@class="alert_box"]/div[text()="确认"]

@@ -1,0 +1,24 @@
+Page	脚本管理页面
+	Page	脚本查询页面
+		
+		新增按钮	//button[text()="新增"]
+
+		查询_脚本名称	//input[@id="script_name"]
+		查询按钮	//input[@value="查询"]
+
+
+	Page	脚本表单
+		脚本名称	//label[starts-with(text(), "脚本名称")]/parent::*//input
+		包含库	//label[starts-with(text(), "包含库")]/parent::*//input
+		脚本标签	//label[starts-with(text(), "脚本标签")]/parent::*//input
+		所属工程	//label[starts-with(text(), "所属工程")]/parent::*//select
+		业务模块	//label[starts-with(text(), "业务模块")]/parent::*//input
+		脚本描述	//label[starts-with(text(), "脚本描述")]/parent::*//input
+		自动化脚本	//label[starts-with(text(), "自动化脚本")]/parent::*//textarea
+		新增参数按钮	//button[text()="新增参数"]
+		保存按钮	//button[text()="保存"]
+
+	Page	数据录入页面
+		脚本名称	//input[@id="script_name"]
+		新增数据按钮	//button[text()="新增参数"]
+
