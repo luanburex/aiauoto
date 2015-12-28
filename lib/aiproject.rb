@@ -3,15 +3,15 @@ module AIAuto
 
 		attr_accessor :browser
 
-		def initialize task_name, task_id = nil
-			@task_id = task_id
-			@task_name = task_name
+		def initialize args = nil
 			@logger = nil
+			@init_args = args
 		end
 
 		def end
 			@logger.project_log_end
 		end
+
 
 		def run_case_test_method case_class, method_filter = nil, data = nil
 			if method_filter.nil?
@@ -25,11 +25,10 @@ module AIAuto
 			end
 
 			caseObj = case_class.new @browser
-			init_logger if @logger.nil?
+			init_logger @init_args if @logger.nil?
 			caseObj.logger = @logger
 			caseObj.methods.grep(method_reg).each do |method_name|
 				begin
-
 					if(data.nil?)
 						@logger.case_log_start case_class, method_name
 						caseObj.scence_recover if caseObj.respond_to? :scence_recover
@@ -39,13 +38,29 @@ module AIAuto
 						if data.kind_of? Hash
 							@logger.case_log_start case_class, method_name
 							caseObj.scence_recover if caseObj.respond_to? :scence_recover
-							caseObj.__send__(method_name.to_sym, data)
+							begin
+								caseObj.__send__(method_name.to_sym, data)
+							ensure
+								data.each do |k, v|
+									if k.class == Symbol
+										@logger.now_case_log[k] = data[k]
+									end
+								end
+							end
 							@logger.case_log_end
 						elsif data.kind_of? Array
 							data.each do |d|
 								@logger.case_log_start case_class, method_name, d
 								caseObj.scence_recover if caseObj.respond_to? :scence_recover
-								caseObj.__send__(method_name.to_sym, d)
+								begin
+									caseObj.__send__(method_name.to_sym, d)
+								ensure
+									data.each do |k, v|
+										if k.class == Symbol
+											@logger.now_case_log[k] = data[k]
+										end
+									end
+								end
 								@logger.case_log_end
 							end
 						end
@@ -53,7 +68,8 @@ module AIAuto
 					
 
 				rescue Exception => e
-					@logger.case_log_end false, e.message, e 
+					@logger.error e
+					@logger.case_log_end AIAuto::AIProjectRecorder::RESULT_STAT[:FAIL], e.message
 				end
 			end
 
@@ -61,11 +77,13 @@ module AIAuto
 		end
 
 		private
-		def init_logger
+		def init_logger init_log_args
 			raise "browser object is nil" if @browser.nil?
 			@logger = AILog.new @browser
-			@logger.project_log_start  @task_name, @task_id
+			@logger.project_log_start init_log_args
 		end
+
+
 
 	end
 end
